@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #10b981; /* emerald-500 */
+  --color-primary-dark: #059669; /* emerald-600 */
+  --color-bg-dark: #0f172a; /* slate-900 */
+  --color-bg-card: #1e293b; /* slate-800 */
+}
+
+body {
+  background-color: var(--color-bg-dark);
+  color: #f8fafc; /* slate-50 */
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+}
+
+/* Custom Scrollbar for dark theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-bg-card);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155; /* slate-700 */
+}
+
+/* Glassmorphism Utilities */
+.glass {
+  background: rgba(30, 41, 59, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card {
+  background: linear-gradient(145deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.9));
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Animated Gradient Background for Login/Register */
+.animated-bg {
+  background: linear-gradient(-45deg, #0f172a, #1e293b, #064e3b, #0f172a);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
