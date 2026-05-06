@@ -33,7 +33,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchAnalytics = async () => {
       try {
-        const res = await axios.get('http://127.0.0.1:5001/api/analytics');
+        const res = await axios.get(`${import.meta.env.VITE_API_URL || 'http://127.0.0.1:5001'}/api/analytics`);
         setData(res.data);
       } catch (err) {
         console.error('Error fetching analytics:', err);

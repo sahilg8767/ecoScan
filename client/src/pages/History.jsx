@@ -23,7 +23,7 @@ const History = () => {
   useEffect(() => {
     const fetchHistory = async () => {
       try {
-        const res = await axios.get('http://127.0.0.1:5001/api/history');
+        const res = await axios.get(`${import.meta.env.VITE_API_URL || 'http://127.0.0.1:5001'}/api/history`);
         setHistory(res.data);
       } catch (err) {
         console.error('Error fetching history:', err);
